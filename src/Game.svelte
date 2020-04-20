@@ -1,5 +1,7 @@
 <script>
-    import { Doc } from "sveltefire";
+    import {Doc} from "sveltefire";
+    import CardRow from "./CardRow.svelte";
+
     export let params;
 
     const nextRound = (game, gameRef) => {
@@ -12,21 +14,11 @@
 </script>
 
 <Doc path={`games/${params.game}`} let:data={game} let:ref={gameRef}>
-    <div id="first" style="display: flex;">
-        {#each game.firstRow as card}
-            <div style="padding: 20px; border: 1px solid black; width: 200px;">
-                {card.value}
-            </div>
-        {/each}
-    </div>
+    <CardRow cards={game.firstRow}/>
 
-    <div id="second" style="display: flex;">
-        {#each game.secondRow as card}
-            <div style="padding: 20px; border: 1px solid black; width: 200px;">
-                <img src="actions/{card.action}.png" alt="{card.action}" style="max-width: 100%;">
-            </div>
-        {/each}
-    </div>
+    <CardRow cards={game.secondRow} let:card>
+        <img src="actions/{card.action}.png" alt="{card.action}" style="max-width: 100%;">
+    </CardRow>
 
     <button on:click={nextRound(game, gameRef)}>Suivant</button>
 </Doc>
