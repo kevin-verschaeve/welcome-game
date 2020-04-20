@@ -1,38 +1,39 @@
-const numberCards = [
-  {value: 1, nb: 3},
-  {value: 2, nb: 3},
-  {value: 14, nb: 3},
-  {value: 15, nb: 3},
-  {value: 3, nb: 4},
-  {value: 13, nb: 4},
-  {value: 4, nb: 5},
-  {value: 12, nb: 5},
-  {value: 5, nb: 6},
-  {value: 11, nb: 6},
-  {value: 6, nb: 7},
-  {value: 10, nb: 7},
-  {value: 7, nb: 8},
-  {value: 9, nb: 8},
-  {value: 8, nb: 9},
-];
-
-const actionCards = [
-  {action: 'pool', nb: 9},
-  {action: 'interim', nb: 9},
-  {action: 'bis', nb: 9},
-  {action: 'landscaper', nb: 18},
-  {action: 'estate_agent', nb: 18},
-  {action: 'geometer', nb: 18},
-];
-
 export const getDeck = () => {
+  const numberCards = [
+    {value: 1, nb: 3},
+    {value: 2, nb: 3},
+    {value: 14, nb: 3},
+    {value: 15, nb: 3},
+    {value: 3, nb: 4},
+    {value: 13, nb: 4},
+    {value: 4, nb: 5},
+    {value: 12, nb: 5},
+    {value: 5, nb: 6},
+    {value: 11, nb: 6},
+    {value: 6, nb: 7},
+    {value: 10, nb: 7},
+    {value: 7, nb: 8},
+    {value: 9, nb: 8},
+    {value: 8, nb: 9},
+  ];
+
+  const actionCards = [
+    {action: 'pool', nb: 9},
+    {action: 'interim', nb: 9},
+    {action: 'bis', nb: 9},
+    {action: 'landscaper', nb: 18},
+    {action: 'estate_agent', nb: 18},
+    {action: 'geometer', nb: 18},
+  ];
+
+
   const deck = [];
   let randomCard, i, n;
 
   for (n of numberCards) {
     i = 1;
     for (i; i <= n.nb; i++) {
-      randomCard = getRandomAction();
+      randomCard = getRandomAction(actionCards);
 
       deck.push({value: n.value, action: randomCard.action});
       --randomCard.nb;
@@ -44,7 +45,7 @@ export const getDeck = () => {
   return deck;
 };
 
-const getRandomAction = () => {
+const getRandomAction = (actionCards) => {
   const cards = actionCards.filter((c) => c.nb > 0);
 
   return cards[Math.floor(Math.random() * cards.length)];

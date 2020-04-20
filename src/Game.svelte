@@ -1,6 +1,7 @@
 <script>
     import {Doc} from "sveltefire";
     import CardRow from "./CardRow.svelte";
+    import { newGame } from './Services/GameManager';
 
     export let params;
 
@@ -16,6 +17,10 @@
         const p  = game.plans.find(p => p.level == plan.level);
         p.done = !p.done;
         gameRef.set(game);
+    };
+
+    const restart = (gameRef) => {
+        gameRef.set(newGame());
     };
 </script>
 
@@ -37,4 +42,5 @@
     </div>
 
     <button on:click={nextRound(game, gameRef)}>Suivant</button>
+    <button on:click={restart(gameRef)}>Nouvelle partie</button>
 </Doc>
