@@ -64,3 +64,61 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+#main_container{
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#app-name {
+	text-align: center;
+}
+
+#app-name a {
+	font-family: 'Pacifico', cursive;
+	color:#FFFFFF;
+}
+
+#app-name a:hover {
+	text-decoration: none;
+}
+
+.box {
+	border: solid 1px rgba(51,51,51,0.12);
+    background: rgba(246,246,246,1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.box hr{
+	width: 25%;
+}
+
+#home {
+	text-align: center;
+}
+
+#home img{
+	width:50%;
+}
+
+#plans{
+	width: 200px;
+	text-align: center;
+}
+#plans a{
+	display: block;
+	text-align: center;
+}
+
+#plans a img{
+	width: 150px;
+}
+
+#actions{
+	text-align: center;
+}
