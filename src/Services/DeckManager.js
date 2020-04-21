@@ -80,15 +80,10 @@ const allCards = [
   {value: 15, action: "estate_agent"},
   {value: 15, action: "geometer"},
   {value: 15, action: "landscaper"},    
-]
+];
 
 export const getDeck = () => {
-  const deck = [];
-  let randomCard, n;
-
-  for (n of allCards) {
-    deck.push({value: n.value, action: n.action});
-  }
+  const deck = allCards.slice();
 
   shuffle(deck);
 

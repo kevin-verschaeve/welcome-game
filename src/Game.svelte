@@ -36,15 +36,15 @@
 
     <div id="actions">
         <CardRow cards={game.firstRow} let:card>
-            <img src="images/carte_{card.value}/carte_{card.value}_{card.action}.png" alt="{card.action}" style="max-width: 100%;">
+            <img src="images/carte_{card.value}/carte_{card.value}_{card.action}.png" alt="{card.action}">
         </CardRow>
 
         <CardRow cards={game.secondRow} let:card>
-            <img src="images/actions/{card.action}.png" alt="{card.action}" style="max-width: 100%;">
+            <img src="images/actions/{card.action}.png" alt="{card.action}">
         </CardRow>       
 
         <button class="btn waves-effect waves-light" on:click={nextRound(game, gameRef)}>Suivant</button>
-        <button style="margin-left: 50px" class="btn waves-effect waves-light" on:click={restart(gameRef)}>Nouvelle partie</button>
+        <button class="btn waves-effect waves-light space-left" on:click={restart(gameRef)}>Nouvelle partie</button>
     </div>
 </Doc>
 </div>

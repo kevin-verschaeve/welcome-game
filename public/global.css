@@ -72,19 +72,6 @@ button:focus {
     height: 100%;
 }
 
-#app-name {
-	text-align: center;
-}
-
-#app-name a {
-	font-family: 'Pacifico', cursive;
-	color:#FFFFFF;
-}
-
-#app-name a:hover {
-	text-decoration: none;
-}
-
 .box {
 	border: solid 1px rgba(51,51,51,0.12);
     background: rgba(246,246,246,1);
@@ -110,6 +97,7 @@ button:focus {
 	width: 200px;
 	text-align: center;
 }
+
 #plans a{
 	display: block;
 	text-align: center;
@@ -121,4 +109,21 @@ button:focus {
 
 #actions{
 	text-align: center;
+}
+
+#actions img{
+	max-width: 100%;
+}
+
+.space-left{
+	margin-left: 50px
+}
+
+.card-row{
+	display: flex;
+}
+
+.card-row div{
+	padding: 20px; 
+	width: 200px;
 }
