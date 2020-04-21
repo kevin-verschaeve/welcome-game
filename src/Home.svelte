@@ -9,9 +9,11 @@
         getContext('firebase').firestore().doc(`games/${gameId}`).set(newGame()).then(() => push(`/game/${gameId}`));
     }
 </script>
-
-<div id="home">
-    <h4>Créer une nouvelle partie</h4>
-    <input placeholder="Nom de la partie" type="text" bind:value={name}>
-    <button on:click={create}>Créer</button>
+<div id="main_container">
+    <div id="home" class="box">
+        <img src="welcome_logo.png"/>
+        <h4>Créer une nouvelle partie</h4><br/>
+        <input placeholder="Nom de la partie" type="text" bind:value={name}>
+        <button class="btn waves-effect waves-light" on:click={create}>Créer</button>
+    </div>
 </div>

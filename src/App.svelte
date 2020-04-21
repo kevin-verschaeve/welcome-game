@@ -18,6 +18,5 @@
 </script>
 
 <FirebaseApp {firebase}>
-	<h1 id="app-name"><a href="/">Welcome to...</a></h1>
 	<Router {routes}/>
 </FirebaseApp>

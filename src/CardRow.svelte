@@ -2,9 +2,9 @@
     export let cards;
 </script>
 
-<div class="card-row" style="display: flex;">
+<div class="card-row">
     {#each cards as card}
-        <div style="padding: 20px; border: 1px solid black; width: 200px;">
+        <div>
             <slot {card}>{card.value}</slot>
         </div>
     {/each}

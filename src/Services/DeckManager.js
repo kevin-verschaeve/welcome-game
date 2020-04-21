@@ -1,54 +1,93 @@
+const allCards = [
+  {value: 1, action: "estate_agent"},
+  {value: 1, action: "geometer"},
+  {value: 1, action: "landscaper"}, 
+  {value: 2, action: "estate_agent"},
+  {value: 2, action: "geometer"},
+  {value: 2, action: "landscaper"},  
+  {value: 3, action: "bis"},  
+  {value: 3, action: "pool"},  
+  {value: 3, action: "geometer"},
+  {value: 3, action: "interim"},
+  {value: 4, action: "bis"},
+  {value: 4, action: "interim"},
+  {value: 4, action: "pool"},
+  {value: 4, action: "estate_agent"},
+  {value: 4, action: "landscaper"},
+  {value: 5, action: "landscaper"},
+  {value: 5, action: "landscaper"},
+  {value: 5, action: "geometer"},
+  {value: 5, action: "geometer"},
+  {value: 5, action: "estate_agent"},
+  {value: 5, action: "estate_agent"},
+  {value: 6, action: "pool"},
+  {value: 6, action: "interim"},
+  {value: 6, action: "bis"},
+  {value: 6, action: "landscaper"},
+  {value: 6, action: "estate_agent"},
+  {value: 6, action: "geometer"},
+  {value: 6, action: "geometer"},
+  {value: 7, action: "estate_agent"},
+  {value: 7, action: "estate_agent"},
+  {value: 7, action: "landscaper"},
+  {value: 7, action: "landscaper"},
+  {value: 7, action: "geometer"},
+  {value: 7, action: "pool"},
+  {value: 7, action: "bis"},
+  {value: 7, action: "interim"},
+  {value: 8, action: "landscaper"},
+  {value: 8, action: "landscaper"},
+  {value: 8, action: "estate_agent"},
+  {value: 8, action: "estate_agent"},
+  {value: 8, action: "geometer"},
+  {value: 8, action: "geometer"},
+  {value: 8, action: "pool"},
+  {value: 8, action: "bis"},
+  {value: 8, action: "interim"},
+  {value: 9, action: "estate_agent"}, 
+  {value: 9, action: "estate_agent"}, 
+  {value: 9, action: "landscaper"}, 
+  {value: 9, action: "landscaper"}, 
+  {value: 9, action: "interim"}, 
+  {value: 9, action: "geometer"}, 
+  {value: 9, action: "bis"}, 
+  {value: 9, action: "pool"}, 
+  {value: 10, action: "landscaper"}, 
+  {value: 10, action: "interim"}, 
+  {value: 10, action: "geometer"}, 
+  {value: 10, action: "geometer"}, 
+  {value: 10, action: "bis"}, 
+  {value: 10, action: "pool"}, 
+  {value: 10, action: "estate_agent"}, 
+  {value: 11, action: "landscaper"},
+  {value: 11, action: "landscaper"},
+  {value: 11, action: "geometer"},
+  {value: 11, action: "geometer"},
+  {value: 11, action: "estate_agent"},
+  {value: 11, action: "estate_agent"},
+  {value: 12, action: "landscaper"}, 
+  {value: 12, action: "interim"}, 
+  {value: 12, action: "bis"}, 
+  {value: 12, action: "pool"}, 
+  {value: 12, action: "estate_agent"}, 
+  {value: 13, action: "geometer"}, 
+  {value: 13, action: "interim"}, 
+  {value: 13, action: "bis"}, 
+  {value: 13, action: "pool"},
+  {value: 14, action: "estate_agent"},
+  {value: 14, action: "geometer"},
+  {value: 14, action: "landscaper"},  
+  {value: 15, action: "estate_agent"},
+  {value: 15, action: "geometer"},
+  {value: 15, action: "landscaper"},    
+];
+
 export const getDeck = () => {
-  const numberCards = [
-    {value: 1, nb: 3},
-    {value: 2, nb: 3},
-    {value: 14, nb: 3},
-    {value: 15, nb: 3},
-    {value: 3, nb: 4},
-    {value: 13, nb: 4},
-    {value: 4, nb: 5},
-    {value: 12, nb: 5},
-    {value: 5, nb: 6},
-    {value: 11, nb: 6},
-    {value: 6, nb: 7},
-    {value: 10, nb: 7},
-    {value: 7, nb: 8},
-    {value: 9, nb: 8},
-    {value: 8, nb: 9},
-  ];
-
-  const actionCards = [
-    {action: 'pool', nb: 9},
-    {action: 'interim', nb: 9},
-    {action: 'bis', nb: 9},
-    {action: 'landscaper', nb: 18},
-    {action: 'estate_agent', nb: 18},
-    {action: 'geometer', nb: 18},
-  ];
-
-
-  const deck = [];
-  let randomCard, i, n;
-
-  for (n of numberCards) {
-    i = 1;
-    for (i; i <= n.nb; i++) {
-      randomCard = getRandomAction(actionCards);
-
-      deck.push({value: n.value, action: randomCard.action});
-      --randomCard.nb;
-    }
-  }
+  const deck = allCards.slice();
 
   shuffle(deck);
 
   return deck;
-};
-
-const getRandomAction = (actionCards) => {
-  const cards = actionCards.filter((c) => c.nb > 0);
-
-  return cards[Math.floor(Math.random() * cards.length)];
 };
 
 const shuffle = (deck) => {
