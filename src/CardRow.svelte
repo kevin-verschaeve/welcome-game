@@ -7,5 +7,9 @@
         <div>
             <slot {card}>{card.value}</slot>
         </div>
+    {:else}
+        <div>
+            Plus de cartes
+        </div>
     {/each}
 </div>
