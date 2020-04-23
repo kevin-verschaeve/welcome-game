@@ -1,93 +1,22 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+[https://welcome-5e266.firebaseapp.com](https://welcome-5e266.firebaseapp.com)
 
----
+# Welcome to...
 
-# svelte app
+An online board for the ["Welcome to..." game](https://www.kickstarter.com/projects/deepwatergames/welcome-to-second-printing-new-neighborhood-expans).
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+This is a replacement of the physical cards, to allow to play with your friends remotely.
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+Use this website in combination with the mobile application:
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+- [Android](https://play.google.com/store/apps/details?id=com.bluecocker.welcome&hl=en)
+- [iOS](https://apps.apple.com/fr/app/welcome-to-your-perfect-place/id1358077007)
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+## How to play
 
+- Create a new game on [the board](https://welcome-5e266.firebaseapp.com)
+- Copy the url and send it to all the players
+- Each player opens the url in a browser (on a computer) and see the board
+- Each player starts the mobile application
 
-## Get started
+Game on!
 
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
